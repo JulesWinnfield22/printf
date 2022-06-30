@@ -6,9 +6,9 @@
  */
 
 /**
- * this is the begingin of the program
- * @param void.
- * @return (0)
+ * main - this is the begingin of the program
+ *
+ * Return: 0
  */
 int main(void)
 {
