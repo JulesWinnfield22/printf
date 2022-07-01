@@ -11,11 +11,10 @@
 int main(void)
 {
 	int n;
+	char type[20];
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	char type[20];
 
 	if (n == 0)
 	{
