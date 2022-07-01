@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int a, b;
+	int a, b, pos;
 
 	for (a = 48; a <= 57; a++)
 	{
@@ -16,14 +16,14 @@ int main(void)
 			putchar((char) a);
 			putchar(' ');
 			putchar((char) a);
-			
-			int pos = 0;
+
+			pos = 0;
 
 			if (b + 1 < 58)
 			{
 				pos = 1;
 			}
-			
+
 			putchar((char) b + pos);
 
 			if (b != 57 || a != 57)
