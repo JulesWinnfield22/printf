@@ -16,16 +16,17 @@ int main(void)
 			putchar((char) a);
 			putchar(' ');
 			putchar((char) a);
+			
+			int pos = 0;
 
 			if (b + 1 < 58)
 			{
-				putchar((char) b + 1);
-			} else
-			{
-				putchar((char) b);
+				pos = 1;
 			}
+			
+			putchar((char) b + pos);
 
-			if (b < 57)
+			if (b != 57 || a != 57)
 			{
 				putchar(',');
 				putchar(' ');
