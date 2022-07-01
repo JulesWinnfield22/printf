@@ -14,14 +14,13 @@ int main(void)
 		{
 			if (a < b)
 			{
-				putchar((char) a);
-				putchar((char) b);
-
-				if (a != 57)
+				if (b > 49 && a != 57)
 				{
 					putchar(',');
 					putchar(' ');
 				}
+				putchar((char) a);
+				putchar((char) b);
 			}
 		}
 	}
