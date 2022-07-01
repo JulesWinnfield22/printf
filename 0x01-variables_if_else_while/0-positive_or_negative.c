@@ -19,7 +19,7 @@ int main(void)
 	if (n == 0)
 	{
 		strcpy(type, "is zero");
-	} else if (n % 2 == 0)
+	} else if (n > 0)
 	{
 		strcpy(type, "is positive");
 	} else
