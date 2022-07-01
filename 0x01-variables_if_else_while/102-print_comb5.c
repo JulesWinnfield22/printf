@@ -6,33 +6,51 @@
  */
 int main(void)
 {
-	int a, b, pos;
+	int a, b, c, d;
 
 	for (a = 48; a <= 57; a++)
 	{
 		for (b = 48; b <= 57; b++)
 		{
-			putchar((char) a);
-			putchar((char) a);
-			putchar(' ');
-			putchar((char) a);
-
-			pos = 0;
-
-			if (b + 1 < 58)
+			for (c = 48; c <= 57; c++)
 			{
-				pos = 1;
-			}
+				for (d = 48; d <= 57; d++)
+				{
+					if (a == c && b == d)
+						continue;
 
-			putchar((char) b + pos);
+					if (b == 48 && d == 48 && c < a)
+						continue;
 
-			if (b != 57 || a != 57)
-			{
-				putchar(',');
-				putchar(' ');
+					if (a == 48 && c == 48 && d < b)
+						continue;
+
+					if (c == a && d < b)
+						continue;
+
+					if (d == b && c < a)
+						continue;
+
+					if (c < a && d < b)
+						continue;
+
+					putchar((char) a);
+					putchar((char) b);
+					putchar(' ');
+					putchar((char) c);
+					putchar((char) d);
+
+					if (a != 57 || b != 56 || c != 57 || d != 57)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+
+				}
 			}
 		}
 	}
+
 	putchar('\n');
 	return (0);
 }
