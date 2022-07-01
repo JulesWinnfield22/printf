@@ -27,7 +27,7 @@ int main(void)
 		strcpy(type, "is negative");
 	}
 
-	printf("%d: %s\n", n, type);
+	printf("%d %s\n", n, type);
 
 	return (0);
 }
