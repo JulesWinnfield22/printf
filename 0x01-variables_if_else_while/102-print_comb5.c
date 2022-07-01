@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 /**
  * main - entry point
  *
@@ -7,6 +8,7 @@
 int main(void)
 {
 	int a, b, c, d;
+	char first[2], second[2];
 
 	for (a = 48; a <= 57; a++)
 	{
@@ -16,25 +18,26 @@ int main(void)
 			{
 				for (d = 48; d <= 57; d++)
 				{
-					if ((a == c && b == d) ||
-					(b == 48 && d == 48 && c < a) ||
-					(a == 48 && c == 48 && d < b) ||
-					(c == a && d < b) || (d == b && c < a) |
-					(c < a) || (d < b))
-						continue;
+					first[0] = a;
+					first[1] = b;
 
-					putchar((char) a);
-					putchar((char) b);
-					putchar(' ');
-					putchar((char) c);
-					putchar((char) d);
+					second[0] = c;
+					second[1] = d;
 
-					if (a != 57 || b != 56 || c != 57 || d != 57)
+					if (strcmp(second, first) > 0)
+					{
+						putchar((char) a);
+						putchar((char) b);
+						putchar(' ');
+						putchar((char) c);
+						putchar((char) d);
+
+					if (strcmp(second, first) > 0 && a != 57 || b != 56 || c != 57 || d != 57)
 					{
 						putchar(',');
 						putchar(' ');
 					}
-
+					}
 				}
 			}
 		}
