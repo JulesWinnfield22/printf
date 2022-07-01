@@ -32,7 +32,7 @@ int main(void)
 						putchar((char) c);
 						putchar((char) d);
 
-					if (strcmp(second, first) > 0 && a != 57 || b != 56 || c != 57 || d != 57)
+					if (a != 57 || b != 56 || c != 57 || d != 57)
 					{
 						putchar(',');
 						putchar(' ');
