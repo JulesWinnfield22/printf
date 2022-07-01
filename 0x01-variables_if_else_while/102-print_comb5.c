@@ -16,22 +16,11 @@ int main(void)
 			{
 				for (d = 48; d <= 57; d++)
 				{
-					if (a == c && b == d)
-						continue;
-
-					if (b == 48 && d == 48 && c < a)
-						continue;
-
-					if (a == 48 && c == 48 && d < b)
-						continue;
-
-					if (c == a && d < b)
-						continue;
-
-					if (d == b && c < a)
-						continue;
-
-					if (c < a && d < b)
+					if ((a == c && b == d) ||
+					(b == 48 && d == 48 && c < a) ||
+					(a == 48 && c == 48 && d < b) ||
+					(c == a && d < b) || (d == b && c < a) |
+					(c < a) || (d < b))
 						continue;
 
 					putchar((char) a);
