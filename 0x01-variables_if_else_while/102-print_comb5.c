@@ -8,7 +8,6 @@
 int main(void)
 {
 	int a, b, c, d;
-	char first[2], second[2];
 
 	for (a = 48; a <= 57; a++)
 	{
