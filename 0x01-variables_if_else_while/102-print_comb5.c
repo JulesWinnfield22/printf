@@ -18,13 +18,7 @@ int main(void)
 			{
 				for (d = 48; d <= 57; d++)
 				{
-					first[0] = a;
-					first[1] = b;
-
-					second[0] = c;
-					second[1] = d;
-
-					if (strcmp(second, first) > 0)
+					if (c > a || (d > b && c == a))
 					{
 						putchar((char) a);
 						putchar((char) b);
