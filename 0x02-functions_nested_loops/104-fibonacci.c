@@ -8,13 +8,15 @@
  */
 int main(void)
 {
-	long int a, b, i, t;
+	int i;
+
+	float a, b, t;
 
 	a = 1, b = 1;
 
 	for (i = 0; i < 98; i++)
 	{
-		printf("%lu", a);
+		printf("%.0f", a);
 		if (i < 97)
 			printf(", ");
 
