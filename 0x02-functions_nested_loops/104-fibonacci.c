@@ -9,14 +9,13 @@
 int main(void)
 {
 	int i;
-
-	long double a, b, t;
+	float a, b, t;
 
 	a = 1, b = 1;
 
 	for (i = 0; i < 98; i++)
 	{
-		printf("%.0LF", a);
+		printf("%.0f", a);
 		if (i < 97)
 			printf(", ");
 
