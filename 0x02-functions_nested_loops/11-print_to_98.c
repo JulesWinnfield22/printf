@@ -10,10 +10,12 @@
  */
 void print(int c)
 {
+	int val;
+
 	if (c / 10)
 		print(c / 10);
 
-	int val = c % 10;
+	val = c % 10;
 
 	if (val < 0)
 	{
