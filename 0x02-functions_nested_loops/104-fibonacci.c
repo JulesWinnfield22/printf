@@ -10,13 +10,13 @@ int main(void)
 {
 	int i;
 
-	float a, b, t;
+	long double a, b, t;
 
 	a = 1, b = 1;
 
 	for (i = 0; i < 98; i++)
 	{
-		printf("%.0f", a);
+		printf("%.0LF", a);
 		if (i < 97)
 			printf(", ");
 
