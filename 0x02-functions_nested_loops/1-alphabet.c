@@ -1,12 +1,13 @@
 #include <unistd.h>
 
 #include "main.h"
+
 /**
- * main - entry point
+ * print_alphabet - prints all off the alphabets
  *
- * Return: Always 0
+ * Return: no return value
  */
-int main(void)
+void print_alphabet(void)
 {
 	int a;
 
@@ -16,6 +17,14 @@ int main(void)
 	}
 
 	_putchar('\n');
-
+}
+/**
+ * main - entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	print_alphabet();
 	return (0);
 }
