@@ -33,7 +33,7 @@ void print(int c)
  */
 void print_times_table(int n)
 {
-	int a, b, val, first, second;
+	int a, b, val;
 
 	if (n > -1 && n < 16)
 	{
