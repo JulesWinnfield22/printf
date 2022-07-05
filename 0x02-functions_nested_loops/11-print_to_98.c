@@ -13,7 +13,15 @@ void print(int c)
 	if (c / 10)
 		print(c / 10);
 
-	_putchar(c % 10 + '0');
+	int val = c % 10;
+
+	if (val < 0)
+	{
+		_putchar((val *= -1) + '0');
+	} else
+	{
+		_putchar(val + '0');
+	}
 }
 /**
  * print_to_98 - prints numbers upto 98
@@ -27,6 +35,9 @@ void print_to_98(int a)
 
 	for (start = a; start != 98;)
 	{
+		if (start < 0)
+			_putchar('-');
+
 		print(start);
 		_putchar(',');
 		_putchar(' ');
