@@ -19,7 +19,7 @@ void print(int c)
 	if (val < 0)
 	{
 		_putchar((val *= -1) + '0');
-	} else 
+	} else
 	{
 		_putchar(val + '0');
 	}
@@ -33,9 +33,8 @@ void print(int c)
  */
 void print_times_table(int n)
 {
-	
 	int a, b, val, first, second;
-	
+
 	if (n > -1 && n < 16)
 	{
 		for (a = 0; a <= n; a++)
@@ -60,8 +59,10 @@ void print_times_table(int n)
 				} else
 				{
 					if (b > 0)
+					{
 						_putchar(' ');
 						_putchar(' ');
+					}
 					_putchar(val + '0');
 				}
 			}
