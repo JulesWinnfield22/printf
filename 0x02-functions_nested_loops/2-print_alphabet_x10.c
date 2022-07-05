@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints all off the alphabets
+ * print_alphabet_x10 - prints all off the alphabets 10 times
  *
  * Return: no return value
  */
