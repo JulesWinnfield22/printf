@@ -14,3 +14,4 @@ void print_to_98(int n);
 void print_times_table(int n);
 void more_numbers(void);
 void print_line(int n);
+void print_diagonal(int n);
