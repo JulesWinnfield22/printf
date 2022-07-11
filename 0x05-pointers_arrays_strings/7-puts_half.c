@@ -34,9 +34,16 @@ void puts_half(char *s)
 	char c;
 
 	length = len(s);
-	c = s[length / 2];
-	a = length / 2;
 
+	if (length % 2 == 0)
+	{
+		c = s[length / 2];
+		a = length / 2;
+	} else
+	{
+		c = s[(length - 1) / 2];
+		a = (length - 1) / 2;
+	}
 	while (a < length)
 	{
 		_putchar(c);
