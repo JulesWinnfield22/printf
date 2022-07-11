@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * len - length of a string
  * @s: the string
@@ -29,13 +29,14 @@ int len(char *s)
  */
 void puts_half(char *s)
 {
-
 	int length, a;
 
 	length = len(s);
-
+	printf("length %d\n", length);
 	a = length / 2;
-
+	if (length % 2 != 0)
+		a = (length - 1) / 2;
+	printf("half %d\n", a);
 	for (; a < length; a++)
 	{
 		_putchar(s[a]);
