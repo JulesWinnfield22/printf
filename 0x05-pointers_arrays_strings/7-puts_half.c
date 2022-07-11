@@ -36,7 +36,7 @@ void puts_half(char *s)
 
 	if (length % 2 == 0)
 	{
-		a = (length / 2) + 1;
+		a = length / 2;
 	} else
 	{
 		a = (length - 1) / 2;
