@@ -1,19 +1,19 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * len - length of a string
  * @s: the string
  *
  * Return: an int value
  */
-int len(char s[])
+int len(char *s)
 {
 	int a;
 	char c;
 
 	c = s[0];
-
-	for (a = 0; c != '\0'; a++)
+	a = 0;
+	while (c != '\0')
 	{
 		a++;
 		c = s[a];
@@ -26,20 +26,17 @@ int len(char s[])
  *
  * Return: an int value
  */
-void rev_string(char s[])
+void rev_string(char *s)
 {
-
-	int length;
-	char c;
+	int length, a, b;
+	char temp;
 
 	length = len(s);
-	c = s[length - 1];
 
-	while (length - 1 >= 0)
+	for (a = 0, b = length - 1; a < length / 2; a++, b--)
 	{
-		_putchar(c);
-		length--;
-		c = s[length - 1];
+		temp = s[b];
+		s[b] = s[a];
+		s[a] = temp;
 	}
-	_putchar('\n');
 }
