@@ -31,7 +31,6 @@ void puts_half(char *s)
 {
 
 	int length, a;
-	char c;
 
 	length = len(s);
 
