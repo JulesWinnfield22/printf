@@ -37,7 +37,7 @@ void puts_half(char *s)
 	if (length % 2 != 0)
 		a = (length - 1) / 2;
 	printf("half %d\n", a);
-	for (; a < length; a++)
+	for (; a <= length; a++)
 	{
 		_putchar(s[a]);
 	}
