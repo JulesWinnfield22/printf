@@ -33,8 +33,6 @@ void puts_half(char *s)
 
 	length = len(s);
 	a = length / 2;
-	if (length % 2 != 0)
-		a = (length - 2) / 2;
 
 	for (; a <= length; a++)
 	{
