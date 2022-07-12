@@ -43,7 +43,7 @@ int _atoi(char *c)
 	{
 		if (c[a] >= 48 && c[a] <= 57)
 		{
-			if (a > 0 && val == 0 && c[a - 1] == '-')
+			if (a > 0 && val == 0)
 				b = is_neg(c, a);
 			val = val * 10 + ((int) c[a]) - 48;
 		} else if (val != 0)
