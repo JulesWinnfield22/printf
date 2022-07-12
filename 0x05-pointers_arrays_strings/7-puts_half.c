@@ -40,7 +40,7 @@ void puts_half(char *s)
 	{
 		if (s[a] != '\0')
 		{
-			_putchar('\n');
+			_putchar(s[a]);
 		}
 	}
 	_putchar('\n');
