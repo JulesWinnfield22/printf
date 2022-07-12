@@ -34,11 +34,18 @@ void puts_half(char *s)
 	length = len(s);
 	a = length / 2;
 	if (length % 2 != 0)
-		a = (length - 1) / 2;
-	for (; a <= length; a++)
 	{
-		if (s[a] != '\0')
+		a = (length - 1) / 2;
+		for (; a <= length; a++)
+		{
 			_putchar(s[a]);
+		}
+	} else
+	{
+		for (; a < length; a++)
+		{
+			_putchar(s[a]);
+		}
 	}
 	_putchar('\n');
 }
