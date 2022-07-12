@@ -36,13 +36,13 @@ void puts_half(char *s)
 	if (length % 2 != 0)
 	{
 		a = (length - 1) / 2;
-		for (; a <= length; a++)
+		for (; a < length; a++)
 		{
 			_putchar(s[a]);
 		}
 	} else
 	{
-		for (; a < length; a++)
+		for (; a <= length; a++)
 		{
 			_putchar(s[a]);
 		}
