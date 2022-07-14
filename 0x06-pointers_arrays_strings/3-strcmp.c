@@ -8,19 +8,11 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int val, a;
-
-	val = 0;
-
-	for (a = 0; s1[a] != '\0' && s2[a] != '\0'; a++)
+	while (*s1 && (*s1 == *s2))
 	{
-		if (s1[a] > s2[a])
-			val = 1;
-		else if (s1[a] < s2[a])
-			val = -1;
-		else
-			continue;
-		break;
+		s1++;
+		s2++;
 	}
-	return (val);
+
+	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
 }
