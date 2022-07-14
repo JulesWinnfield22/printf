@@ -30,26 +30,12 @@ int len(char *s)
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int a, destLength, srcLength;
+	int i;
 
-	destLength = len(dest), srcLength = len(src), a = 0;
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
-	while (a < n)
-	{
-		dest[a] = src[a];
-		if (src[a] == '\0' && srcLength < destLength)
-		{
-			while (a < destLength)
-			{
-				dest[a] = '\0';
-				a++;
-			}
-			break;
-		} else if (src[a] == '\0')
-		{
-			break;
-		}
-		a++;
-	}
 	return (dest);
 }
