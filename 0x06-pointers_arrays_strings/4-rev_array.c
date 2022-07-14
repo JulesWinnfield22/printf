@@ -10,7 +10,7 @@ void reverse_array(int *a, int n)
 {
 	int c, b, tmp;
 
-	for (c = 0, b = n - 1; c <= n / 2; c++, b--)
+	for (c = 0, b = n - 1; c < n / 2; c++, b--)
 	{
 		tmp = a[c];
 		a[c] = a[b];
