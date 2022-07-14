@@ -29,29 +29,20 @@ int len(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	char *concat, c;
-	int a, b;
+	char c;
+	int a, length;
 
-	c = dest[0];
-	a = 0;
+	c = src[0];
+	length = len(dest), a = 0;
 
-	while (c != '\0')
-	{
-		concat[a] = c;
-		a++;
-		c = dest[a];
-	}
-
-	b = 0;
 	while (1)
 	{
-		c = src[b];
-		concat[a] = c;
+		dest[length] = c;
 		if (c == '\0')
 			break;
+		length++;
 		a++;
-		b++;
+		c = src[a];
 	}
-
-	return (concat);
+	return (dest);
 }
