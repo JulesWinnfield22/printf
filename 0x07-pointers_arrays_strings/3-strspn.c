@@ -30,6 +30,10 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int length;
 
 	length = 0;
+
+	if (!s || !accept)
+		return (length);
+
 	while (*s != '\0')
 	{
 		if (has(accept, *s))
