@@ -16,5 +16,5 @@ char *_strchr(char *s, char c)
 			break;
 	}
 
-	return (*(s + a) ? s + a : 0);
+	return  (s + a);
 }
