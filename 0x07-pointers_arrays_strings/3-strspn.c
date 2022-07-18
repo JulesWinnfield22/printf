@@ -12,11 +12,11 @@ int has(char *s, char c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			return (1);
+			return (0);
 		s++;
 	}
 
-	return (0);
+	return (1);
 }
 /**
  *  _strspn - gets the length of a prefix substring
@@ -34,7 +34,7 @@ unsigned int _strspn(char *s, char *accept)
 	if (!s || !accept)
 		return (length);
 
-	while (*s != '\0')
+	while (*s)
 	{
 		if (has(accept, *s))
 			length++;
