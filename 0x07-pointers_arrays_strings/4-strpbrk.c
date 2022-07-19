@@ -9,16 +9,21 @@
  */
 int has(char *s, char c)
 {
-	int a;
+	int a, f;
 
+	f = 0;
 	while (*s)
 	{
-		if (*s == c)
-			return (a || 0);
-		s++;
-		if (!a)
+		if (*s == c && f == 0)
+			return (0);
+		else if (*s == c)
+			return (a);
+
+		if (f == 0)
 			a = 0;
+		f = 1;
 		a++;
+		s++;
 	}
 
 	return (a);
@@ -32,9 +37,9 @@ int has(char *s, char c)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int a, pos;
+	int a, pos, f;
 
-	pos = 0;
+	pos = 0, f = 0;
 
 	if (!s || !accept)
 		return (0);
@@ -42,11 +47,14 @@ char *_strpbrk(char *s, char *accept)
 	while (*accept)
 	{
 		pos = has(s, *accept);
-		if (!a && pos > -1)
+		if (f == 0 && pos > -1)
+		{
 			a = pos;
-		else if (pos > -1 && pos < a)
+			f = 1;
+		} else	if (pos < a && f == 1)
 			a = pos;
 		accept++;
 	}
-	return (a && a > -1 ? s + a : 0);
+
+	return (s + a);
 }
