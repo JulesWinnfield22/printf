@@ -9,6 +9,9 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int a, h, n, length;
+	
+	if (!haystack || *needle)
+		return (0);
 
 	a = 0, h = 0, n = 0, length = 0;
 	while (needle[length])
