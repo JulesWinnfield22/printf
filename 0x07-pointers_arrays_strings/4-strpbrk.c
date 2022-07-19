@@ -37,24 +37,36 @@ int has(char *s, char c)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int a, pos, f;
+	int a, b, pos, flg;
 
-	pos = 0, f = 0;
+	a = 0, b = 0, pos = 0, flg = 0;
 
-	if (!s || !accept)
-		return (0);
+	while (*(s + a))
+		a++;
 
-	while (*accept)
+	pos = a;
+	a = 0;
+
+	while (*(accept + a))
 	{
-		pos = has(s, *accept);
-		if (f == 0 && pos > -1)
+		b = 0;
+		while (*(s + b))
 		{
-			a = pos;
-			f = 1;
-		} else	if (pos < a && f == 1)
-			a = pos;
-		accept++;
+			if (accept[a] == s[b])
+			{
+				if (b <= pos)
+				{
+					pos = b;
+					flg = 1;
+				}
+			}
+			b++;
+		}
+		a++;
 	}
 
-	return (s + a);
+	if (flg == 1)
+		return (&s[pos]);
+
+	return (0);
 }
