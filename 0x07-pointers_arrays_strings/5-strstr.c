@@ -1,5 +1,24 @@
 #include "main.h"
 /**
+ * compare - find a substring
+ * @haystack: the string
+ * @needle: the substring
+ *
+ * Return: an integer
+ */
+int compare(char *haystack, char *needle)
+{
+	while (*haystack && *needle)
+	{
+		if (*haystack != *needle)
+			return (0);
+		haystack++;
+		needle++;
+	}
+
+	return (*needle == '\0');
+}
+/**
  * _strstr - gets the substring
  * @haystack: the string
  * @needle: the substring
@@ -8,29 +27,13 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int a, h, n, length;
-
-	a = 0, h = 0, n = 0, length = 0;
-
-	while (needle[length] != '\0')
-		length++;
-
-	while (haystack[a] != '\0')
+	while (*haystack != '\0')
 	{
-		if (haystack[a] == needle[n])
+		if ((*haystack == *needle) && compare(haystack, needle))
 		{
-			h = a, n = 0;
-			while (haystack[h] == needle[n])
-			{
-				h++;
-				n++;
-			}
-
-			if ((n - 1) == length)
-				return (haystack + a);
+			return (haystack);
 		}
-		a++;
+		haystack++;
 	}
-
 	return (0);
 }
