@@ -9,11 +9,13 @@
  */
 int isnum(char *n)
 {
-	if (*n == '\0')
-		return (1);
-	if (isdigit(*n) != 0)
-		isnum((n + 1));
-	return (0);
+	while (*n)
+	{
+		if (!isdigit(*n))
+			return (0);
+		n++;
+	}
+	return (1);
 }
 /**
  * main - entry point
@@ -24,22 +26,23 @@ int isnum(char *n)
  */
 int main(int argc, char *argv[])
 {
-	int sum;
+	int sum, a;
 
-	sum = 0;
+	sum = 0, a = 1;
 	if (argc < 2)
 	{
 		printf("%d\n", sum);
 		return (0);
 	}
-	while (argc--)
+	while (a < argc)
 	{
-		if (!isnum(argv[argc]))
+		if (!isnum(argv[a]))
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(*argv++);
+		sum += atoi(argv[a]);
+		a++;
 	}
 
 	printf("%d\n", sum);
