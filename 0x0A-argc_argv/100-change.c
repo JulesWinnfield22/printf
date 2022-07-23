@@ -7,23 +7,22 @@
  * @value: the value
  * @count: minimum count
  * @coins: all the coins
- * @index: coins array iterator
  *
  * Return: an integer
  */
 long int change(long int *cents, long int *value,
-long int *count, long int *coins, long int *index)
+long int *count, long int *coins)
 {
 	if (*cents == *value)
 		return (*count);
 
-	if ((*value + *(coins + *index) - *cents) <= 0)
+	if ((*value + *coins) - *cents <= 0)
 	{
-		*value += *(coins + *index);
+		*value += *coins;
 		*count = *count + 1;
 	} else
-		*(index) = *index + 1;
-	return (change(cents, value, count, coins, index));
+		coins++;
+	return (change(cents, value, count, coins));
 }
 /**
  * main - entry point
@@ -35,7 +34,7 @@ long int *count, long int *coins, long int *index)
 int main(int argc, char *argv[])
 {
 	long int coins[] = {25, 10, 5, 2, 1};
-	long int index, cents, value, count;
+	long int cents, value, count;
 
 	if (argc != 2)
 	{
@@ -50,8 +49,7 @@ int main(int argc, char *argv[])
 	}
 	value = 0;
 	count = 0;
-	index = 0;
-	count = change(&cents, &value, &count, coins, &index);
+	count = change(&cents, &value, &count, coins);
 	printf("%ld\n", count);
 	return (0);
 }
