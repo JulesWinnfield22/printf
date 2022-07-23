@@ -37,14 +37,12 @@ int main(int argc, char *argv[])
 	long int coins[] = {25, 10, 5, 2, 1};
 	long int index, cents, value, count;
 
-	cents = (long int) atoi(argv[1]);
-	printf("%ld dh\n", cents);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
+	cents = (long int) atoi(argv[1]);
 	if (cents < 0)
 	{
 		printf("%d\n", 0);
