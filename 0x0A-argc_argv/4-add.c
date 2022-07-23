@@ -12,7 +12,7 @@ int isnum(char *n)
 	if (*n == '\0')
 		return (1);
 	if (isdigit(*n) != 0)
-		return (isnum((n + 1)));
+		isnum((n + 1));
 	return (0);
 }
 /**
