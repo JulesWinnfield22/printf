@@ -11,17 +11,17 @@
  *
  * Return: an integer
  */
-int change(int cents, int value, int count, int coins[5], int index)
+int change(int *cents, int *value, int *count, int *coins, int *index)
 {
-	if (cents == value)
-		return (count);
+	if (*cents == *value)
+		return (*count);
 
-	if ((value + coins[index] - cents) <= 0)
+	if ((*value + *(coins + *index) - *cents) <= 0)
 	{
-		value += coins[index];
-		count++;
+		*value += *(coins + *index);
+		*count = *count + 1;
 	} else
-		index++;
+		*(index) = *index + 1;
 	return (change(cents, value, count, coins, index));
 }
 /**
@@ -34,7 +34,7 @@ int change(int cents, int value, int count, int coins[5], int index)
 int main(int argc, char *argv[])
 {
 	int coins[] = {25, 10, 5, 2, 1};
-	int count, cents;
+	int index, cents, value, count;
 
 	cents = atoi(argv[1]);
 
@@ -44,7 +44,16 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	count = change(cents, 0, 0, coins, 0);
+	if (cents < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	value = 0;
+	count = 0;
+	index = 0;
+	count = change(&cents, &value, &count, coins, &index);
 	printf("%d\n", count);
 	return (0);
 }
+
