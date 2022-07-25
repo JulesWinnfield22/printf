@@ -17,10 +17,10 @@ void free_grid(int **grid, int height __attribute__((unused)))
 	{
 		while (grid[len])
 			len++;
-		printf("%d\n", len);
 		for (a = 0; a < len; a++)
 			free(grid[a]);
 
 		free(grid);
 	}
+	return;
 }
