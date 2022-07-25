@@ -9,9 +9,9 @@
  *
  * Return: no return value
  */
-void free_grid(int **grid, int height)
+void free_grid(int **grid, int height __attribute__((unused)))
 {
-	int a, b, len;
+	int a, len;
 
 	if (grid != 0)
 	{
@@ -19,10 +19,8 @@ void free_grid(int **grid, int height)
 			len++;
 		printf("%d\n", len);
 		for (a = 0; a < len; a++)
-			for (b = 0; b < height; b++)
-				free(grid[a]);
+			free(grid[a]);
 
 		free(grid);
 	}
-	return;
 }
