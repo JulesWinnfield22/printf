@@ -51,7 +51,7 @@ char **strtow(char *str)
 	char **s;
 	int a, b, c, p, length, wordLength;
 
-	if (str == 0 || !*str)
+	if (str == 0 || !*str || *str == ' ')
 		return (0);
 
 	length = wordCount(str, 0, 0);
