@@ -51,10 +51,13 @@ char **strtow(char *str)
 	char **s;
 	int a, b, c, p, length, wordLength;
 
-	if (str == 0 || !*str || *str == ' ')
+	if (str == 0 || !*str)
 		return (0);
 
 	length = wordCount(str, 0, 0);
+
+	if (length == 0)
+		return (0);
 
 	s = malloc(sizeof(char *) * (length + 1));
 
