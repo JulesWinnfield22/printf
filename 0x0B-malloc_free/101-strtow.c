@@ -12,7 +12,7 @@
  */
 int wordCount(char *str, int a, int c)
 {
-	if (*str == ' ' || *str == '\t')
+	if (*str == ' ' || *str == '\t' || *str == '\0')
 		a = 1;
 	else if (c == 0 || a == 1)
 	{
@@ -35,7 +35,7 @@ int wordCount(char *str, int a, int c)
  */
 int pos(char *str, int a)
 {
-	if (*str != ' ' && *str != '\t')
+	if ((*str != ' ' && *str != '\t') ||  *str == '\0')
 		return (a);
 
 	return (pos((str + 1), ++a));
@@ -56,10 +56,10 @@ char **strtow(char *str)
 
 	length = wordCount(str, 0, 0);
 
-	s = malloc(sizeof(char) * length);
+	s = malloc(sizeof(char *) * (length + 1));
 
 	p = 0, wordLength = 0;
-	for (a = 0; a < length - 1; a++)
+	for (a = 0; a < length; a++)
 	{
 		p = pos(str + p, p);
 
