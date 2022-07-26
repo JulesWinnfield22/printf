@@ -13,6 +13,9 @@ char *argstostr(int ac, char **av)
 	char *str;
 	int a, b, c;
 
+	if (ac == 0 || av == 0)
+		return (0);
+
 	a = 0, c = 0;
 	while (av[a])
 	{
@@ -26,6 +29,9 @@ char *argstostr(int ac, char **av)
 	}
 
 	str = malloc(sizeof(char) * (c + ac));
+
+	if (str == 0)
+		return (0);
 
 	a = 0, c = 0;
 	while (av[a])
