@@ -13,7 +13,7 @@ int len(char *s)
 
 	length = 0;
 
-	while (s[length])
+	while (s && s[length])
 		length++;
 
 	return (length);
@@ -39,14 +39,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concat == NULL)
 		return (0);
 
-	while (s1[a])
+	while (s1 && s1[a])
 	{
 		concat[a] = s1[a];
 		a++;
 	}
 
 	b = 0;
-	while (n--)
+	while (s2 && n--)
 	{
 		concat[a] = s2[b];
 		a++;
