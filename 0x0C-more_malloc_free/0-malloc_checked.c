@@ -14,10 +14,8 @@ void *malloc_checked(unsigned int b)
 
 	s = malloc(b);
 
-	if (s == NULL)
-	{
-		printf("hallo\n");
+	if (s == 0)
 		exit(98);
-	}
-	return ((void  *)s);
+
+	return (s);
 }
