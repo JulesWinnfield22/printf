@@ -8,6 +8,6 @@
  */
 int main(int ac __attribute__((unused)), char *av[])
 {
-	printf("%s\n", *av += 2);
+	printf("%s\n", __FILE__);
 	return (0);
 }
