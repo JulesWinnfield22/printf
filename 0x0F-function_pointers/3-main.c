@@ -23,24 +23,15 @@ int main(int ac, char *av[])
 
 	op = av[2];
 
-	if (*op != *ADD_OP && *op != *SUB_OP && *op != *DIV_OP
-		&& *op != *MUL_OP && *op != *MOD_OP)
+	a = atoi(av[1]);
+	b = atoi(av[3]);
+
+	f = get_op_func(op);
+	if (!f)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	a = atoi(av[1]);
-	b = atoi(av[3]);
-
-	if ((*op == *DIV_OP || *op == *MOD_OP) && b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	f = get_op_func(op);
-
 	res = f(a, b);
 
 	printf("%d\n", res);
