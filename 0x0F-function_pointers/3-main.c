@@ -25,6 +25,13 @@ int main(int ac, char *av[])
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 
+	if (*op != *DIV_OP || *op != *MOD_OP || *op != *ADD_OP ||
+		*op != *SUB_OP || *op != *MUL_OP)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	if ((*op == *DIV_OP || *op == *MOD_OP) && b == 0)
 	{
 		printf("Error\n");
@@ -32,12 +39,6 @@ int main(int ac, char *av[])
 	}
 
 	f = get_op_func(op);
-
-	if (!f)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 
 	res = f(a, b);
 
