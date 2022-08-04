@@ -22,7 +22,6 @@ int main(int ac, char *av[])
 	}
 
 	op = av[2];
-
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 
