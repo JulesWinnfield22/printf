@@ -1,4 +1,6 @@
 #include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * get_op_func - selects the correct function
  * @s: the operator
@@ -14,17 +16,18 @@ int (*get_op_func(char *s))(int, int)
 		{SUB_OP, op_sub},
 		{DIV_OP, op_div},
 		{MUL_OP, op_mul},
-		{MOD_OP, op_mod}
+		{MOD_OP, op_mod},
+		{NULL, NULL}
 	};
 
 	i = 0;
-	while (*ops[i].op != 0)
+	while (1)
 	{
+		if (ops[i].op == NULL)
+			return (0);
 		if (*ops[i].op == *s)
 			return (ops[i].f);
 		i++;
 	}
-
-	return (0);
 }
 
