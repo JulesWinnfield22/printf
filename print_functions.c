@@ -53,7 +53,7 @@ int printInt(int n, int length)
 
 	_putchar((n % 10) + '0');
 
-	return (1 + length);
+	return (length);
 }
 
 /**
@@ -72,7 +72,7 @@ int print_int(va_list arg)
 
 	length = 0;
 
-	length += printInt(a, length);
+	length += printInt(a, length) + 1;
 
 	return (length);
 }
