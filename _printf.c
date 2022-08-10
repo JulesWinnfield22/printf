@@ -66,12 +66,13 @@ int _printf(const char *format, ...)
 				print(c);
 				count += getLength(c);
 			}
-		} else
+		} else if (*format != '%')
 		{
 			_putchar(*format);
 			format++;
 			count++;
-		}
+		} else
+			format++;
 	}
 	va_end(fmt);
 	return (count);
