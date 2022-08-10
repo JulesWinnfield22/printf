@@ -1,81 +1,36 @@
-#include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
+
+#include "main.h"
 /**
- * print - print string
- * @c: the string
- *
- * Return: no return value
- */
-void print(char *c)
-{
-	if (*c != '\0')
-	{
-		_putchar(*c);
-		print(c + 1);
-	}
-}
-
-/**
- * getLength - length of a string
- * @c: the string
- *
- * Return: the length
- */
-int getLength(char *c)
-{
-	int a;
-
-	a = 0;
-	while (c[a])
-		a++;
-
-	return (a);
-}
-
-/**
- * _printf - produces output according to a format
+ * _printf - prints a strinf
  * @format: the string format
  *
- * Return: string lenght
+ * Return: the string length
  */
 int _printf(const char *format, ...)
 {
-	char *c, s;
 	int count;
 	va_list fmt;
+	int (*func)(va_list);
 
 	if (!format)
 		return (-1);
 
 	va_start(fmt, format);
-	count = 0;
-
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1) == 'c')
+		if (*format == '%')
 		{
-			s = va_arg(fmt, int);
-			if (s)
-			{
-				_putchar(s);
-				format += 2;
-				count++;
-			}
-		} else if (*format == '%' && *(format + 1) == 's')
-		{
-			c = va_arg(fmt, char *);
-			if (c)
-			{
-				print(c);
-				count += getLength(c);
-			}
-		} else if (*format != '%')
-		{
-			_putchar(*format);
 			format++;
-			count++;
+			func = get_func(*format);
+
+			if (!func)
+				return (-1);
+			count += func(fmt);
+			format++;
 		} else
-			return (-1);
+			count += _putchar(*format++);
 	}
 	va_end(fmt);
 	return (count);
