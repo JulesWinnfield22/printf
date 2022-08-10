@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 	va_list fmt;
 
 	if (!format)
-		return (0);
+		return (-1);
 
 	va_start(fmt, format);
 	count = 0;
@@ -75,7 +75,7 @@ int _printf(const char *format, ...)
 			format++;
 			count++;
 		} else
-			format++;
+			return (-1);
 	}
 	va_end(fmt);
 	return (count);
