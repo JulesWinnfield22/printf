@@ -74,6 +74,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(fmt);
-	_putchar('\n');
 	return (count);
 }
