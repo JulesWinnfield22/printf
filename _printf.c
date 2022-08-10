@@ -44,6 +44,9 @@ int _printf(const char *format, ...)
 	int count;
 	va_list fmt;
 
+	if (!format)
+		return (0);
+
 	va_start(fmt, format);
 	count = 0;
 
