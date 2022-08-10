@@ -40,7 +40,7 @@ int getLength(char *c)
  */
 int _printf(const char *format, ...)
 {
-	char *c;
+	char *c, s;
 	int count;
 	va_list fmt;
 
@@ -51,14 +51,21 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1) == 'c')
 		{
-			_putchar(va_arg(fmt, int));
-			format += 2;
-			count++;
+			s = va_arg(fmt, int);
+			if (s)
+			{
+				_putchar(s);
+				format += 2;
+				count++;
+			}
 		} else if (*format == '%' && *(format + 1) == 's')
 		{
 			c = va_arg(fmt, char *);
-			print(c);
-			count += getLength(c);
+			if (c)
+			{
+				print(c);
+				count += getLength(c);
+			}
 		} else
 		{
 			_putchar(*format);
