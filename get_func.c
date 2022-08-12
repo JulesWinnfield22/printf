@@ -12,6 +12,7 @@ int (*get_func(char c))(va_list)
 	struct operation ops[] = {
 		{'s', print_string},
 		{'c', print_char},
+		{'b', print_binary},
 		{'d', print_int},
 		{'i', print_int}
 	};
